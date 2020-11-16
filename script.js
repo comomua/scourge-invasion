@@ -2,15 +2,15 @@ const tuning = 60;
 
 const init = {
 	eu: {
-		rare: 174062,
+		rare: 174057,
 		timer: "2020-11-12T03:20:00Z"
 	},
 	us: {
-		rare: 174062,
+		rare: 174057,
 		timer: "2020-11-13T10:00:00Z"
 	},
 	au: {
-		rare: 174062,
+		rare: 174057,
 		timer: "2020-11-12T22:40:00Z"
 	}
 }
@@ -816,7 +816,7 @@ function nextSpawn(rare)
 	var currentDate = new moment();
 
 	while (spawnTimer < currentDate) {
-		spawnTimer.add(400, 'minutes');
+		spawnTimer.add(200, 'minutes');
 	}
 
 	rare.nextSpawnMins = moment.duration(spawnTimer.diff(currentDate)).asMinutes();
@@ -825,7 +825,7 @@ function nextSpawn(rare)
 		next: `Spawns in ${moment.duration(spawnTimer.diff(currentDate)).humanize()} (${spawnTimer.format("HH:mm")} local time)`
 	};
 
-	spawnTimer.add(400, 'minutes');
+	spawnTimer.add(200, 'minutes');
 
 	rare.spawn.subsequent = `Next spawn in ${moment.duration(spawnTimer.diff(currentDate)).humanize()} (${spawnTimer.format("HH:mm")} local time)`;
 
